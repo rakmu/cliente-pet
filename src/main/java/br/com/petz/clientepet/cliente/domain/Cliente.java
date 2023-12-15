@@ -18,7 +18,6 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @Entity
@@ -42,11 +41,10 @@ public class Cliente {
 	private String cpf;
 	@NotNull
 	private Boolean aceitaTermos;
-	
+
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraDaUltimaAlteracao;
-	
-	
+
 	public Cliente(@NotBlank String nomeCompleto, @NotBlank @Email String email, @NotBlank String celular,
 			String telefone, Sexo sexo, @NotNull LocalDate dataNascimento, @CPF String cpf,
 			@NotNull Boolean aceitaTermos) {
@@ -60,8 +58,5 @@ public class Cliente {
 		this.aceitaTermos = aceitaTermos;
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
-	
-	
-	
-	
+
 }
