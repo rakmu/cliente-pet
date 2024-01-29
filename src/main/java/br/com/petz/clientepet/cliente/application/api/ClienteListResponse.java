@@ -5,19 +5,17 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 import br.com.petz.clientepet.cliente.domain.Cliente;
-import jakarta.validation.constraints.NotBlank;
 import lombok.Value;
 
 @Value
 public class ClienteListResponse {
 
 	private UUID idCliente;
-	@NotBlank
 	private String nomeCompleto;
 	private String cpf;
 	private String email;
 	private String celular;
-	
+
 	public static List<ClienteListResponse> converte(List<Cliente> clientes) {
 		return clientes.stream()
 				.map(ClienteListResponse::new)
@@ -31,6 +29,5 @@ public class ClienteListResponse {
 		this.email = cliente.getEmail();
 		this.celular = cliente.getCelular();
 	}
-	
-	
+
 }
