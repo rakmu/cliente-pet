@@ -18,7 +18,7 @@ public class ClienteController implements ClienteAPI {
 	@Override
 	public ClienteResponse postCliente(ClienteRequest clienteRequest) {
 		log.info("[incia] ClienteController postCliente");
-		ClienteResponse clienteCriado = clienteService.criaCliente(clienteRequest);	
+		ClienteResponse clienteCriado = clienteService.criaCliente(clienteRequest);
 		log.info("[finaliza] ClienteController postCliente");
 		return clienteCriado;
 	}
@@ -26,7 +26,7 @@ public class ClienteController implements ClienteAPI {
 	@Override
 	public List<ClienteListResponse> getTodosClientes() {
 
-		log.info("[incia] ClienteController getTodosClientes");
+		log.info("[inicia] ClienteController getTodosClientes");
 		List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
 		log.info("[finaliza] ClienteController getTodosClientes");
 		return clientes;
@@ -34,10 +34,11 @@ public class ClienteController implements ClienteAPI {
 
 	@Override
 	public ClienteDetalhadoResponse getClienteAtravesId(UUID idCliente) {
-		log.info("[incia] ClienteController getClienteAtravesId");
+		log.info("[inicia] ClienteController getClienteAtravesId");
 		log.info("[idCliente] {}", idCliente);
+		ClienteDetalhadoResponse clienteDetalhado = clienteService.buscaClienteAtravezId(idCliente);
 		log.info("[finaliza] ClienteController getClienteAtravesId");
-		return null;
+		return clienteDetalhado;
 	}
 
 }
