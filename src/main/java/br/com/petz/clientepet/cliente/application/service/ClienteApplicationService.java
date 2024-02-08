@@ -37,10 +37,11 @@ public class ClienteApplicationService implements ClienteService {
 	}
 
 	@Override
-	public ClienteDetalhadoResponse buscaClienteAtravezId(UUID idCliente) {
-		log.info("[inicia] ClienteApplicationService - buscaClienteAtravezId");
-		log.info("[finaliza] ClienteApplicationService - buscaClienteAtravezId");
-		return null;
+	public ClienteDetalhadoResponse buscaClienteAtravesId(UUID idCliente) {
+		log.info("[inicia] ClienteApplicationService - buscaClienteAtravesId");
+		Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
+		log.info("[finaliza] ClienteApplicationService - buscaClienteAtravesId");
+		return new ClienteDetalhadoResponse(cliente);
 
 	}
 
